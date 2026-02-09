@@ -6,18 +6,18 @@ ENV DEBIAN_FRONTEND=noninteractive \
     TZ=Asia/Shanghai 
 
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends --no-install-suggests \
-		wget=1.21-1+deb11u1 \
-		ca-certificates=20210119 \
-		lib32z1=1:1.2.11.dfsg-2+deb11u2 \
-  		ffmpeg \
-		libsm6 \
-		libxext6 \
-  		libcurl3-gnutls \
-    # 清理缓存减小体积
-    && rm -rf /var/lib/apt/lists/* \
-    # 生成UTF-8 locale（匹配环境变量）
-    && locale-gen en_US.UTF-8 \
+    && apt-get install -y --no-install-recommends --no-install-suggests \
+        # 保留你指定的精确版本
+        wget=1.21-1+deb11u1 \
+        ca-certificates=20210119 \
+        lib32z1=1:1.2.11.dfsg-2+deb11u2 \
+        # 基础依赖包（无版本限制）
+        ffmpeg \
+        libsm6 \
+        libxext6 \
+        # 替换 libcurl3-gnutls：Debian 11 中用 libcurl4-gnutls-dev 替代
+        libcurl4-gnutls-dev \
+    && rm -rf /var/lib/apt/lists/*
 # 设置工作目录
 WORKDIR /data
 

@@ -1,4 +1,4 @@
-FROM steamcmd/steamcmd:ubuntu-22
+FROM steamcmd/steamcmd:ubuntu-24
 
 # 完整的环境变量配置（覆盖SteamCMD所有运行需求）
 ENV DEBIAN_FRONTEND=noninteractive \

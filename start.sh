@@ -27,6 +27,8 @@ fi
 if [ "${MT_ENABLED:-true}" != "false" ]; then
     SERVER_ARGS="$SERVER_ARGS --mt-enabled"
 fi
+# 最大线程数 (默认: 4)
+SERVER_ARGS="$SERVER_ARGS --max-threads ${MAX_THREADS:-4}"
 
 # 最大玩家数 (默认: 6)
 SERVER_ARGS="$SERVER_ARGS --max-players ${MAX_PLAYERS:-6}"
@@ -66,7 +68,7 @@ SERVER_ARGS="$SERVER_ARGS --game-mode ${GAME_MODE:-PAExpansion1:lobby}"
 SERVER_ARGS="$SERVER_ARGS --output-dir ${OUTPUT_DIR:-/data/logs}"
 
 # 3. 打印调试信息（使用数组展开形式）
-echo "Starting server with: ./server $SERVER_ARGS"
+echo "Starting server with: ./server $SERVER_ARGS" >&2
 
 # 4. 执行服务器（关键：使用数组展开）
 exec ./server $SERVER_ARGS

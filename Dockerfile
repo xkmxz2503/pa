@@ -11,15 +11,13 @@ RUN apt-get update && \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-    
-COPY start.sh start_help_zh.txt /data/script/
-RUN chmod -R 777 /data
-
 # 设置工作目录
 WORKDIR /data
 
-# 2. 给启动脚本赋予执行权限
-RUN chmod +x /data/script/start.sh
+# 复制文件 + 设置权限（合并操作，避免冗余）
+COPY start.sh start_help_zh.txt /data/script/
+RUN chmod -R 755 /data && \
+    chmod +x /data/script/start.sh
 
 # 3. 指定容器启动时默认执行的脚本
 CMD ["sh", "/data/script/start.sh"]

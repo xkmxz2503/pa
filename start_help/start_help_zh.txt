@@ -1,0 +1,16 @@
+环境变量	对应参数	默认值	说明
+SERVER_PORT	--port	25900	服务端口
+HEADLESS	--headless	true	设为 false 可禁用
+ALLOW_LAN	--allow-lan	true	设为 false 可禁用
+MT_ENABLED	--mt-enabled	true	设为 false 可禁用
+MAX_PLAYERS	--max-players	6	最大玩家数
+MAX_SPECTATORS	--max-spectators	5	最大观众数
+COMMUNITY_SERVERS_URL	--community-servers-url	auto	社区服务器地址
+HTTP_ENABLED	--http	true	设为 false 可禁用
+SERVER_PASSWORD	--server-password	"" (空)	服务器密码
+REPLAY_FILENAME	--replay-filename	UTCTIMESTAMP	回放文件名
+REPLAY_TIMEOUT	--replay-timeout	180	回放超时 (秒)
+GAMEOVER_TIMEOUT	--gameover-timeout	360	结束超时 (秒)
+SERVER_NAME	--server-name	xkmxz	服务器名称
+GAME_MODE	--game-mode	PAExpansion1:lobby	游戏模式
+OUTPUT_DIR	--output-dir	/data/logs	日志输出目录

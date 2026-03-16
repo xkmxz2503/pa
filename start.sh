@@ -68,3 +68,4 @@ echo "Starting server with: ./server $SERVER_ARGS"
 
 # 4. 执行服务器（关键：使用数组展开）
 exec ./server $SERVER_ARGS
+cp /script/server_help_zh.txt /data/

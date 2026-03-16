@@ -18,6 +18,6 @@ WORKDIR /data
 COPY start.sh start_help_zh.txt /data/script/
 RUN chmod -R 755 /data && \
     chmod +x /data/script/start.sh
-
+ENTRYPOINT []
 # 3. 指定容器启动时默认执行的脚本
 CMD ["sh", "/data/script/start.sh"]

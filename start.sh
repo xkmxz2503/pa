@@ -53,9 +53,9 @@ SERVER_ARGS="$SERVER_ARGS --replay-timeout ${REPLAY_TIMEOUT:-180}"
 # 游戏结束超时 (默认: 360)
 SERVER_ARGS="$SERVER_ARGS --gameover-timeout ${GAMEOVER_TIMEOUT:-360}"
 
-# 服务器名称 (默认: a Game Hall)
+# 服务器名称 (默认: A Dockerised PA:T Server)
 # 关键：这里直接拼接变量，数组会处理空格
-SERVER_ARGS="$SERVER_ARGS --server-name ${SERVER_NAME:-a Game Hall}"
+SERVER_ARGS="$SERVER_ARGS --server-name ${SERVER_NAME:-A Dockerised PA:T Server}"
 
 # 游戏模式 (默认: PAExpansion1:lobby)
 SERVER_ARGS="$SERVER_ARGS --game-mode ${GAME_MODE:-PAExpansion1:lobby}"

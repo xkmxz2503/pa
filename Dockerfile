@@ -11,13 +11,12 @@ RUN apt-get update && \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
+    
+COPY start.sh start_help_zh.txt /data/script/
+RUN chmod -R 777 /data
+
 # 设置工作目录
 WORKDIR /data
-
-RUN chmod -R 777 /data/
-
-COPY start.sh /data/script/
-COPY start_help_zh.txt /data/script/
 
 # 2. 给启动脚本赋予执行权限
 RUN chmod +x /data/script/start.sh

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cp /script/server_help_zh.txt /data/
+cp /script/server_help_zh.txt /data/help
 cd /data/gamefiles
-./server --help > /data/server_help.txt
+./server --help > /data/help/server_help.txt
 
 # 1. 初始化空数组
 SERVER_ARGS=""

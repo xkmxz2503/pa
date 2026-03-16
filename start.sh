@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p /data/help 
-cp /script/server_help_zh.txt /data/help
+cp /script/help/* /data/help/
 cd /data/gamefiles
 ./server --help > /data/help/server_help.txt
 

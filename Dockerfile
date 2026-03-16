@@ -15,9 +15,9 @@ RUN apt-get update && \
 WORKDIR /data
 
 # 复制文件 + 设置权限（合并操作，避免冗余）
-COPY start.sh start_help_zh.txt /data/script/
-RUN chmod -R 755 /data && \
-    chmod +x /data/script/start.sh
+COPY start.sh start_help_zh.txt /script/
+RUN chmod -R 755 /script && \
+    chmod +x /script/start.sh
 ENTRYPOINT []
 # 3. 指定容器启动时默认执行的脚本
-CMD ["sh", "/data/script/start.sh"]
+CMD ["sh", "/script/start.sh"]

@@ -16,7 +16,9 @@ WORKDIR /data
 
 # 复制文件 + 设置权限（合并操作，避免冗余）
 COPY start.sh start_help_zh.txt /script/
+
 RUN chmod -R 777 /script && \
+    mkdir -p /data/help && \
     chmod -R 777 /data/help && \
     chmod +x /script/start.sh
 ENTRYPOINT []

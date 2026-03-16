@@ -13,3 +13,14 @@ RUN apt-get update && \
 
 # 设置工作目录
 WORKDIR /data
+
+RUN chmod -R 777 /data
+
+COPY start.sh /data/
+COPY start_help_zh.txt /data/
+
+# 2. 给启动脚本赋予执行权限
+RUN chmod +x start.sh
+
+# 3. 指定容器启动时默认执行的脚本
+CMD ["sh", "./start.sh"]

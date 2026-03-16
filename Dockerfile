@@ -16,7 +16,7 @@ WORKDIR /data
 
 # 复制文件 + 设置权限（合并操作，避免冗余）
 COPY start.sh start_help_zh.txt /script/
-RUN chmod -R 755 /script && \
+RUN chmod -R 777 /script && \
     chmod +x /script/start.sh
 ENTRYPOINT []
 # 3. 指定容器启动时默认执行的脚本

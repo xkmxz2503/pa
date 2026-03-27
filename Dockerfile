@@ -2,7 +2,8 @@ FROM steamcmd/steamcmd:ubuntu-24
 
 # 完整的环境变量配置（覆盖SteamCMD所有运行需求）
 ENV DEBIAN_FRONTEND=noninteractive \
-    TZ=Asia/Shanghai 
+    TZ=Asia/Shanghai \
+    LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu 
 
 # Install PAT dependencies
 RUN apt-get update && \

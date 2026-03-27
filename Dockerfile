@@ -1,4 +1,4 @@
-FROM steamcmd/steamcmd:ubuntu-24
+FROM steamcmd/steamcmd:ubuntu-20
 
 # 完整的环境变量配置（覆盖SteamCMD所有运行需求）
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 # Install PAT dependencies
 RUN apt-get update && \
-    apt-get install -y libsdl2-2.0-0 libgl1 libstdc++6 libcurl3-gnutls libuuid1 \
+    apt-get install -y libsdl2-2.0-0 libgl1 libstdc++6 libcurl3-gnutls libuuid1 wget libidn11 \
     && apt-get remove -y aptitude \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
